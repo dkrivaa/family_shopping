@@ -18,5 +18,7 @@ st.button('new order')
 # Reading and showing present shopping list
 df = repofiles.read_file()
 table = st.table(df)
-st.selectbox('change order #:', df.index)
+
+
+change = st.selectbox('change order #:', df.index, disabled=True)
 
