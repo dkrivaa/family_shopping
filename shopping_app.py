@@ -11,7 +11,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
 st.markdown('___')
 
 with st.container():
-    col1, col2, col3 = st.columns([1, 1, 12])
+    col1, col2, col3 = st.columns([2, 2, 12])
     with col1:
         change_order = st.button('Change order')
     with col2:
