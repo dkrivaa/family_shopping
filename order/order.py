@@ -22,7 +22,7 @@ def new_order():
 
 
 def order_change(change):
-    pass
+    st.write(change)
 
 
 
