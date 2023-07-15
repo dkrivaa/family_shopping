@@ -15,7 +15,7 @@ with st.container():
     with col1:
         change_order = st.button('Change order')
     with col2:
-        new_order = st.button('new order', on_click=order.new_order())
+        new_order = st.button('new order', on_click=order.new_order)
 
 # Getting sidebar order menu
 # order.order()
