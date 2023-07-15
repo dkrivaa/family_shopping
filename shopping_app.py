@@ -7,7 +7,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
+persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
 
-persons = ['Karen', 'Alex', 'Leanne', 'Yoel' ]
-st.selectbox('Ordered by:', (persons))
+st.selectbox('New order by:', persons)
 
