@@ -20,5 +20,5 @@ df = repofiles.read_file()
 table = st.table(df)
 
 
-change = st.selectbox('change order #:', df.index, index='choose order #')
+change = st.selectbox('change order #:', df.index)
 
