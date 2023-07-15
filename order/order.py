@@ -20,5 +20,4 @@ def order():
 
     df = pd.DataFrame(shopping)
     st.table(df)
-    st.write(repofiles.save_file(df))
 
