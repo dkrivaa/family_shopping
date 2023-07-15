@@ -12,4 +12,4 @@ st.markdown('___')
 # df = repofiles.read_file()
 
 
-table = st.table(df)
+# table = st.table(df)
