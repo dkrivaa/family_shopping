@@ -12,11 +12,12 @@ def order():
     product = st.sidebar.text_input('What would you like to order?')
     amount = st.sidebar.selectbox('Amount', range(1, 10))
 
-    product_list = ['bamba']
-    amount_list = [1]
-    person_list = ['Dad']
+    product_list = []
+    amount_list = []
+    person_list = []
 
     shopping = {'product': product_list, 'amount': amount_list, 'person': person_list}
+    return shopping
 
 
 

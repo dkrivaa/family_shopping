@@ -10,10 +10,10 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
+# Getting sidebar order menu
 order.order()
 
+# Reading and showing present shopping list
 df = repofiles.read_file()
-
-
 table = st.table(df)
 
