@@ -20,7 +20,23 @@ df = repofiles.read_file()
 table = st.table(df)
 
 st.write(df)
-st.dataframe(df)
+
+
+editable_df = st.dataframe(df)
+
+# Allow users to edit the DataFrame
+if st.button('Apply Changes'):
+    updated_data = {}
+    for column in df.columns:
+        updated_data[column] = []
+        for row_value in editable_df[column]:
+            if isinstance(row_value, str):
+                updated_data[column].append(row_value)
+            else:
+                updated_data[column].append(row_value)
+
+    df = pd.DataFrame(updated_data)
+
 
 
 
