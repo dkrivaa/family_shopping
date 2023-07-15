@@ -15,5 +15,4 @@ product_list = []
 amount_list = []
 person_list = []
 
-
 shopping = {'product': product_list, 'amount': amount_list, 'person': person_list}
