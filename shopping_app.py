@@ -20,6 +20,7 @@ df = repofiles.read_file()
 table = st.table(df)
 
 st.write(df)
+st.dataframe(df)
 
 
 
