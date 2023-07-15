@@ -19,5 +19,5 @@ st.button('new order')
 df = repofiles.read_file()
 table = st.table(df)
 st.write('Change order #:')
-st.selectbox(df.index)
+st.selectbox('', df.index)
 
