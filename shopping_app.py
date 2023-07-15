@@ -16,12 +16,13 @@ order.order()
 # Reading and showing present shopping list
 df = repofiles.read_file()
 table = st.table(df)
-# Add action buttons
-button_col1, button_col2, button_col3 = table.add_column('Action', df.shape[0]*[False])
 
-for i, row in enumerate(df.iterrows()):
-    button_col1[i], button_col2[i], button_col3[i] = st.columns(3)
-    button_col1[i].button('Edit')
-    button_col2[i].button('Delete')
-    button_col3[i].checkbox('Select')
+
+# Add action buttons
+button_col1, button_col2, button_col3 = st.columns(3)
+
+for i, row in df.iterrows():
+    button_col1.button('Edit')
+    button_col2.button('Delete')
+    button_col3.checkbox('Select')
 
