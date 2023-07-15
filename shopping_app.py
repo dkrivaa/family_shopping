@@ -11,10 +11,10 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
 st.markdown('___')
 
 with st.container():
-    col1, col2, col3 = st.columns[1,1,12]
-    with col1:
+    cols = st.columns[1, 1, 12]
+    with cols[0]:
         change_order = st.button('Change order')
-    with col2:
+    with cols[1]:
         new_order = st.button('new order')
 
 # Getting sidebar order menu
