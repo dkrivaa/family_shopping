@@ -27,3 +27,6 @@ table = st.table(df)
 if change_order:
     change = st.selectbox('change order #:', df.index)
     order.order_change(change)
+
+if new_order:
+    order.new_order()

@@ -4,7 +4,7 @@ import pandas as pd
 from repo_files import repofiles
 
 
-def order():
+def new_order():
     # Who can order?
     persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
     # New Order
