@@ -10,6 +10,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
+change_order = st.button('Change order')
 st.button('new order')
 
 # Getting sidebar order menu
@@ -19,6 +20,6 @@ st.button('new order')
 df = repofiles.read_file()
 table = st.table(df)
 
-
-change = st.selectbox('change order #:', df.index)
-
+if change_order:
+    change = st.selectbox('change order #:', df.index)
+    order.order_change(change)
