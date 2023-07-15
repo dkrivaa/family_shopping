@@ -19,7 +19,7 @@ st.button('new order')
 df = repofiles.read_file()
 table = st.table(df)
 
-with st.container:
+with st.container():
     cols = st.columns(2)
     with cols[0]:
         st.write('Change order #:')
