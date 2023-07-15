@@ -13,7 +13,7 @@ st.markdown('___')
 with st.container():
     col1, col2, col3 = st.columns([1, 1, 8])
     with col1:
-        change_order = st.button('Change order', on_click=order.order_change)
+        change_order = st.button('Change order')
     with col2:
         new_order = st.button('new order')
 
