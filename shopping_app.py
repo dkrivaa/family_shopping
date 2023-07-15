@@ -14,3 +14,4 @@ person = st.selectbox('New order by:', persons)
 product = st.text_input('What would you like to order?')
 amount = st.selectbox('Amount', range(1, 10))
 
+shopping = {'product': product, 'amount': amount, 'person': person}
