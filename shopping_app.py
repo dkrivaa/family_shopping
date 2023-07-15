@@ -17,16 +17,15 @@ with st.container():
     with col2:
         new_order = st.button('new order')
 
-# Getting sidebar order menu
-# order.order()
 
 # Reading and showing present shopping list
 df = repofiles.read_file()
 table = st.table(df)
 
 if change_order:
-    change = st.selectbox('change order #:', df.index)
-    order.order_change(change)
+    while df.index:
+        change = st.selectbox('change order #:', df.index)
+        order.order_change(change)
 
 if new_order:
     order.new_order()
