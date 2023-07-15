@@ -28,6 +28,7 @@ def save_file(df):
     }
     # Make the API request to create
     response = requests.put(api_url, headers=headers, json=payload)
+    return response.status_code
 
 
 # Function to read file (the function returns Dataframe) from GitHub repository
