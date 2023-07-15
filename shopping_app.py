@@ -18,11 +18,4 @@ df = repofiles.read_file()
 table = st.table(df)
 
 
-# Add action buttons
-button_col1, button_col2, button_col3 = st.columns(3)
-
-for i, row in df.iterrows():
-    button_col1.button('Edit')
-    button_col2.button('Delete')
-    button_col3.checkbox('Select')
 
