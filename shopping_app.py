@@ -17,3 +17,7 @@ product = st.sidebar.text_input('What would you like to order?')
 amount = st.sidebar.selectbox('Amount', range(1, 10))
 
 shopping = {'product': product, 'amount': amount, 'person': person}
+
+df = pd.DataFrame(shopping)
+
+table = st.table(df)
