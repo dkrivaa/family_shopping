@@ -13,7 +13,6 @@ def new_order():
     amount = st.sidebar.selectbox('Amount', range(1, 10))
     person = st.sidebar.selectbox('New order by:', persons)
 
-
     product_list = []
     amount_list = []
     person_list = []
