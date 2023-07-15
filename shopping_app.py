@@ -19,4 +19,4 @@ st.button('new order')
 df = repofiles.read_file()
 table = st.table(df)
 
-st.dataframe(df)
+st.write(type(st.dataframe(df)))
