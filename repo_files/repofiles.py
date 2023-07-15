@@ -31,7 +31,7 @@ def save_file(df):
 
 
 # Function to read file (the function returns Dataframe) from GitHub repository
-def read_file(df):  # filename with ''
+def read_file():  # filename with ''
     # Secrets
     repo_url = st.secrets['REPO']
     access_token = st.secrets['ACCESS_TOKEN']  # Personal Access Token with repo scope
