@@ -12,7 +12,8 @@ st.markdown('___')
 
 order.order()
 
-# df = repofiles.read_file()
+df = repofiles.read_file()
 
 
-# table = st.table(df)
+table = st.table(df)
+

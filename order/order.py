@@ -18,6 +18,5 @@ def order():
 
     shopping = {'product': product_list, 'amount': amount_list, 'person': person_list}
 
-    df = pd.DataFrame(shopping)
-    st.table(df)
+
 
