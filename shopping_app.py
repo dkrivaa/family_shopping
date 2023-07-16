@@ -44,7 +44,7 @@ if submit_order:
 
 if change_order:
     item = st.selectbox('Which order would you like to change?', df.index)
-    if item:
+    if item != None:
         choice = st.radio('What would you like to change?', ['Delete', 'Change Amount'])
 
 
