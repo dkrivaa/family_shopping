@@ -50,7 +50,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>New Order?</b></s
 persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
 # New Order
 product = st.text_input('What would you like to order?')
-amount = st.selectbox('Amount', range(1, 10))
+amount = st.slider('Amount', 1, 10, 1)
 person = st.selectbox('New order by:', persons)
 submit_order = st.button('Submit order', type='primary')
 
