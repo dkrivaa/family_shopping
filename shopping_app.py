@@ -10,6 +10,13 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
+# EXISTING ORDER LIST
+change_order = st.button('Change order')
+# Reading and showing present shopping list
+df = repofiles.read_file()
+table = st.table(df)
+
+
 # SIDEBAR (NEW ORDER)
 # Who can order?
 persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
@@ -24,12 +31,7 @@ if submit_order:
     order.new_order(product, amount, person)
 
 
-# Reading and showing present shopping list
-df = repofiles.read_file()
-table = st.table(df)
 
-# If change order button is pressed
-change_order = st.button('Change order')
 
 
 
