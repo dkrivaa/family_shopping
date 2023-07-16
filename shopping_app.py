@@ -48,13 +48,15 @@ choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index=
 
 if choice == 'Delete':
     item = st.selectbox('Which order would you like to change?', df.index)
-    df = df.drop(item)
+    st.write(item)
+    # if item:
+    #     df = df.drop(item)
 
-    # Making sure all products are without spaces
-    df['product'] = df['product'].str.replace(' ', '_')
-
-    repofiles.del_file()
-    repofiles.save_file(df)
+    # # Making sure all products are without spaces
+    # df['product'] = df['product'].str.replace(' ', '_')
+    #
+    # repofiles.del_file()
+    # repofiles.save_file(df)
 
 
 
