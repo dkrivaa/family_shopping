@@ -5,10 +5,8 @@ from repo_files import repofiles
 
 
 def new_order(product, amount, person):
+    pass
 
-
-
-    # return shopping
 
 
 def order_change(change):
