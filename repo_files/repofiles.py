@@ -50,11 +50,11 @@ def read_file():  # filename with ''
         data = base64.b64decode(content).decode('utf-8')
         data_list = data.split()
         data_list = data_list[1:]
-        st.write(data_list)
         product = []
         amount = []
         person = []
         for items in data_list:
+            st.write(items)
             items = items.split(',')
             product.append(items[0])
             amount.append(items[1])
