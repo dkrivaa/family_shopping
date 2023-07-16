@@ -33,7 +33,7 @@ with cols[0]:
     else:
         pass
 
-    submit = st.button('Submit changes')
+    submit = st.button('Submit changes', type='primary')
     if submit:
         # Making sure all products are without spaces
         df['product'] = df['product'].str.replace(' ', '_')
