@@ -43,6 +43,7 @@ if submit_order:
 
 
 if change_order:
-    order.order_change()
+    item = st.selectbox('Which order would you like to change?', df.index)
+    order.order_change(item)
 
 
