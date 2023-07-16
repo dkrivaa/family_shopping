@@ -54,7 +54,6 @@ def read_file():  # filename with ''
         amount = []
         person = []
         for items in data_list:
-            st.write(items)
             items = items.split(',')
             product.append(items[0])
             amount.append(items[1])
