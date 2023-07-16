@@ -16,6 +16,11 @@ change_order = st.button('Change order')
 df = repofiles.read_file()
 table = st.table(df)
 
+if change_order:
+    item = st.selectbox('Which order would you like to change?', df.index)
+
+
+
 # SIDEBAR (NEW ORDER)
 # Who can order?
 persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']

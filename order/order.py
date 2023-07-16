@@ -3,13 +3,6 @@ import pandas as pd
 
 from repo_files import repofiles
 
-
-def new_order(product, amount, person):
-    pass
-
-
-
-
 def order_change(change):
     pass
 
