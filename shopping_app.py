@@ -40,21 +40,21 @@ if submit_order:
     repofiles.del_file()
     repofiles.save_file(df)
 
-# CHANGING EXISTING ORDER
-st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b></span>'
-         , unsafe_allow_html=True)
-choice = st.radio('What would you like to change?', ['Delete', 'Amount'])
-
-
-if choice == 'Delete':
-    item = st.selectbox('Which order would you like to change?', df.index)
-    df = df.drop(item)
-
-    # Making sure all products are without spaces
-    df['product'] = df['product'].str.replace(' ', '_')
-
-    repofiles.del_file()
-    repofiles.save_file(df)
+# # CHANGING EXISTING ORDER
+# st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b></span>'
+#          , unsafe_allow_html=True)
+# choice = st.radio('What would you like to change?', ['Delete', 'Amount'], )
+#
+#
+# if choice == 'Delete':
+#     item = st.selectbox('Which order would you like to change?', df.index)
+#     df = df.drop(item)
+#
+#     # Making sure all products are without spaces
+#     df['product'] = df['product'].str.replace(' ', '_')
+#
+#     repofiles.del_file()
+#     repofiles.save_file(df)
 
 
 
