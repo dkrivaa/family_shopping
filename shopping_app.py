@@ -18,14 +18,16 @@ st.sidebar.title('NEW ORDER')
 product = [st.sidebar.text_input('What would you like to order?')]
 amount = [st.sidebar.selectbox('Amount', range(1, 10))]
 person = [st.sidebar.selectbox('New order by:', persons)]
-new_order = st.sidebar.button('SUBMIT')
+new_order = (product, amount, person)
+submit_order = st.sidebar.button('SUBMIT', on_click=order.new_order(new_order))
 
-change_order = st.button('Change order')
 
 # Reading and showing present shopping list
 df = repofiles.read_file()
 table = st.table(df)
 
+# If change order button is pressed
+change_order = st.button('Change order')
 
 
 

@@ -4,10 +4,9 @@ import pandas as pd
 from repo_files import repofiles
 
 
-def new_order():
-    pass
-
-    # shopping = {'product': product, 'amount': amount, 'person': person}
+def new_order(product, amount, person):
+    shopping = {'product': product, 'amount': amount, 'person': person}
+    st.write(shopping)
     # return shopping
 
 
