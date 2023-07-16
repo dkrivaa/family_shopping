@@ -10,11 +10,17 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
-# EXISTING ORDER LIST
-change_order = st.button('Change order')
-# Reading and showing present shopping list
-df = repofiles.read_file()
-table = st.table(df)
+
+def startup():
+    # EXISTING ORDER LIST
+    change_order = st.button('Change order')
+    # Reading and showing present shopping list
+    df = repofiles.read_file()
+    table = st.table(df)
+    return df
+
+
+startup()
 
 
 # SIDEBAR (NEW ORDER)
@@ -27,13 +33,13 @@ amount = st.sidebar.selectbox('Amount', range(1, 10))
 person = st.sidebar.selectbox('New order by:', persons)
 submit_order = st.sidebar.button('SUBMIT')
 
+
 if submit_order:
     shopping = [product, amount, person]
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
     repofiles.del_file()
     repofiles.save_file(df)
-    st.experimental_rerun
 
 
 
