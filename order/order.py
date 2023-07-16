@@ -9,6 +9,7 @@ def new_order(product, amount, person):
 
 
 
+
 def order_change(change):
     pass
 

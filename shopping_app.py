@@ -31,8 +31,9 @@ if submit_order:
     shopping = [product, amount, person]
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
-    st.table(df)
-
+    repofiles.del_file()
+    repofiles.save_file(df)
+    st.experimental_rerun
 
 
 
