@@ -10,6 +10,9 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
+df = repofiles.read_file()
+
+
 cols = st.columns(2)
 
 with cols[0]:
