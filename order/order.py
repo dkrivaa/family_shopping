@@ -12,9 +12,10 @@ def new_order():
     product = [st.sidebar.text_input('What would you like to order?')]
     amount = [st.sidebar.selectbox('Amount', range(1, 10))]
     person = [st.sidebar.selectbox('New order by:', persons)]
+    return product, amount, person
 
-    shopping = {'product': product, 'amount': amount, 'person': person}
-    return shopping
+    # shopping = {'product': product, 'amount': amount, 'person': person}
+    # return shopping
 
 
 def order_change(change):
