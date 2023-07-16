@@ -47,9 +47,19 @@ st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b>
 item = st.selectbox('Which order would you like to change?', df.index)
 choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index=1)
 
+
 if choice == 'Delete':
     df = df.drop(item)
+elif choice == 'Amount':
+    new_amount = st.selectbox('new amount', range(1, 10))
+    df.at[item, 'amount'] = new_amount
+else:
+    pass
 
+
+
+submit = st.button('Submit changes')
+if submit:
     # Making sure all products are without spaces
     df['product'] = df['product'].str.replace(' ', '_')
 
