@@ -18,6 +18,7 @@ table = st.table(df)
 
 if change_order:
     item = st.selectbox('Which order would you like to change?', df.index)
+    st.write(item)
 
 
 
