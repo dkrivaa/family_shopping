@@ -28,8 +28,9 @@ person = [st.sidebar.selectbox('New order by:', persons)]
 submit_order = st.sidebar.button('SUBMIT')
 
 if submit_order:
-    shopping = {'product': product, 'amount': amount, 'person': person}
-    df = df.append(shopping, ignore_index=True)
+    shopping = [product, amount, person]
+    # shopping = {'product': product, 'amount': amount, 'person': person}
+    df.loc[len(df.index)] = shopping
     st.table(df)
 
 
