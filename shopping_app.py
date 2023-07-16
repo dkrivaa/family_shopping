@@ -51,7 +51,7 @@ with cols[1]:
     product = st.text_input('What would you like to order?')
     amount = st.selectbox('Amount', range(1, 10))
     person = st.selectbox('New order by:', persons)
-    submit_order = st.button('Submit order')
+    submit_order = st.button('Submit order', type='primary')
 
     if ' ' in product:
         product = product.replace(' ', '_')
