@@ -36,8 +36,8 @@ if submit_order:
     test = df.to_csv()
     st.write(test)
 
-    # repofiles.del_file()
-    # repofiles.save_file(df)
+    repofiles.del_file()
+    repofiles.save_file(df)
 
 
 
