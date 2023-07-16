@@ -28,7 +28,7 @@ choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index=
 if choice == 'Delete':
     df = df.drop(item)
 elif choice == 'Amount':
-    n_amount = st.slider('new amount', 1, 10)
+    n_amount = st.slider('new amount', 1, 10, 1)
     new_amount = st.selectbox('new amount', range(1, 10))
     df.at[item, 'amount'] = new_amount
 else:
