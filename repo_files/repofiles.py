@@ -13,7 +13,7 @@ def save_file(df):
     # name and content of file to save
     file_content = df.to_csv(index=False)
     # Encoding
-    encoded_content = base64.b64encode(file_content.encode("utf-8")).decode("utf-8")
+    # encoded_content = base64.b64encode(file_content.encode("utf-8")).decode("utf-8")
     # Prepare the API URL
     api_url = f"https://api.github.com/repos/{repo_url}/contents/df.csv"
     # Set up the request headers with the access token
@@ -24,7 +24,7 @@ def save_file(df):
     # Create the request payload
     payload = {
         "message": "Add file via Streamlit Share",
-        "content": encoded_content
+        "content": file_content   # encoded_content
     }
     # Make the API request to create
     response = requests.put(api_url, headers=headers, json=payload)
@@ -47,7 +47,8 @@ def read_file():  # filename with ''
     if response.status_code == 200:
         content = response.json()['content']
         # Decode the content from base64
-        data = base64.b64decode(content).decode('utf-8')
+        # data = base64.b64decode(content).decode('utf-8')
+        data = content
         st.write(data)
         data_list = data.split()
         data_list = data_list[1:]
