@@ -31,10 +31,10 @@ if ' ' in product:
 
 
 if submit_order:
-    st.write(product)
     shopping = [product, amount, person]
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
+    product = ''
 
     # Making sure all products are without spaces
     df['product'] = df['product'].str.replace(' ', '_')
