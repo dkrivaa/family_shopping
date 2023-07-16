@@ -40,6 +40,12 @@ if submit:
 
     repofiles.del_file()
     repofiles.save_file(df)
+    if choice == 'Delete':
+        st.success('Your order was successfully deleted')
+    elif choice == 'Amount':
+        st.success('Your order was successfully updated')
+    else:
+        pass
     st.experimental_rerun()
 
 st.markdown('___')
