@@ -48,8 +48,9 @@ def read_file():  # filename with ''
         content = response.json()['content']
         # Decode the content from base64
         data = base64.b64decode(content).decode('utf-8')
-        data_list = data.split()
+        data_list = data.split(',')
         data_list = data_list[1:]
+        st.write(data_list)
         product = []
         amount = []
         person = []
