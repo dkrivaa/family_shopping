@@ -11,6 +11,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
 st.markdown('___')
 
 df = repofiles.read_file()
+table = st.table(df)
 
 
 cols = st.columns(2)
@@ -41,6 +42,8 @@ with cols[0]:
         st.experimental_rerun()
 
 with cols[1]:
+    st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>New Order?</b></span>'
+                , unsafe_allow_html=True)
     # Who can order?
     persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
     # New Order
