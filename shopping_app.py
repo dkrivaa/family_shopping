@@ -32,6 +32,8 @@ if submit_order:
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
     table = st.table(df)
+    test = df.to_csv()
+    st.write(test)
 
     # repofiles.del_file()
     # repofiles.save_file(df)
