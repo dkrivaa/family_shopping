@@ -10,18 +10,11 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
-
-def startup():
-    # EXISTING ORDER LIST
-    change_order = st.button('Change order')
-    # Reading and showing present shopping list
-    df = repofiles.read_file()
-    table = st.table(df)
-    return df
-
-
-startup()
-
+# EXISTING ORDER LIST
+change_order = st.button('Change order')
+# Reading and showing present shopping list
+df = repofiles.read_file()
+table = st.table(df)
 
 # SIDEBAR (NEW ORDER)
 # Who can order?
