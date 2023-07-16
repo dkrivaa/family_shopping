@@ -13,21 +13,21 @@ st.markdown('___')
 with st.container():
     col1, col2, col3 = st.columns([1, 1, 8])
     with col1:
-        change_order = st.button('Change order')
+        change_order = st.button('Change order', on_click=order.order_change)
     with col2:
-        new_order = st.button('new order')
+        new_order = st.button('new order', on_click=order.new_order)
 
 
 # Reading and showing present shopping list
 df = repofiles.read_file()
 table = st.table(df)
 
-if change_order:
-    change = st.selectbox('change order #:', df.index)
-    order.order_change(change)
-
-if new_order:
-    order.new_order()
+# if change_order:
+#     change = st.selectbox('change order #:', df.index)
+#     order.order_change(change)
+#
+# if new_order:
+#     order.new_order()
 
 
 
