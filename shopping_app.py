@@ -39,6 +39,7 @@ if submit_order:
 
     repofiles.del_file()
     repofiles.save_file(df)
+    st.experimental_rerun()
 
 # CHANGING EXISTING ORDER
 st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b></span>'
@@ -65,6 +66,7 @@ if submit:
 
     repofiles.del_file()
     repofiles.save_file(df)
+    st.experimental_rerun()
 
 
 
