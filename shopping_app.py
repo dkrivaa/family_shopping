@@ -29,7 +29,7 @@ submit_order = st.sidebar.button('SUBMIT')
 
 if submit_order:
     shopping = {'product': product, 'amount': amount, 'person': person}
-    df = df.append(shopping)
+    df = df.append(shopping, ignore_index=True)
     st.table(df)
 
 
