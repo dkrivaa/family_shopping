@@ -10,24 +10,20 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
-with st.container():
-    col1, col2, col3 = st.columns([1, 1, 8])
-    with col1:
-        change_order = st.button('Change order')
-    with col2:
-        new_order = st.button('new order', on_click=order.new_order)
+# Who can order?
+persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
+# New Order
+st.sidebar.title('NEW ORDER')
+product = [st.sidebar.text_input('What would you like to order?')]
+amount = [st.sidebar.selectbox('Amount', range(1, 10))]
+person = [st.sidebar.selectbox('New order by:', persons)]
 
+change_order = st.button('Change order')
 
 # Reading and showing present shopping list
 df = repofiles.read_file()
 table = st.table(df)
 
-if change_order:
-    change = st.selectbox('change order #:', df.index)
-    order.order_change(change)
-
-# if new_order:
-#     order.new_order()
 
 
 
