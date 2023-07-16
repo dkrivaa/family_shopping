@@ -28,7 +28,6 @@ if change_order:
 
 if new_order:
     shopping = order.new_order()
-    st.write(shopping)
 
 
 
