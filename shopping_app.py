@@ -45,6 +45,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b>
          , unsafe_allow_html=True)
 item = st.selectbox('Which order would you like to change?', df.index)
 choice = st.radio('What would you like to change?', ['Delete', 'Change Amount'])
+st.write(choice)
 
 
 
