@@ -10,63 +10,58 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
          , unsafe_allow_html=True)
 st.markdown('___')
 
-# EXISTING ORDER LIST
-# Reading and showing present shopping list
-df = repofiles.read_file()
-table = st.table(df)
+cols = st.columns(2)
 
+with cols[0]:
+    # CHANGING EXISTING ORDER
+    st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b></span>'
+                , unsafe_allow_html=True)
 
-# SIDEBAR (NEW ORDER)
-# Who can order?
-persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
-# New Order
-st.sidebar.title('NEW ORDER')
-product = st.sidebar.text_input('What would you like to order?')
-amount = st.sidebar.selectbox('Amount', range(1, 10))
-person = st.sidebar.selectbox('New order by:', persons)
-submit_order = st.sidebar.button('Submit order')
+    item = st.selectbox('Which order would you like to change?', df.index)
+    choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index=1)
 
-if ' ' in product:
-    product = product.replace(' ', '_')
+    if choice == 'Delete':
+        df = df.drop(item)
+    elif choice == 'Amount':
+        new_amount = st.selectbox('new amount', range(1, 10))
+        df.at[item, 'amount'] = new_amount
+    else:
+        pass
 
-if submit_order:
-    shopping = [product, amount, person]
-    # shopping = {'product': product, 'amount': amount, 'person': person}
-    df.loc[len(df.index)] = shopping
+    submit = st.button('Submit changes')
+    if submit:
+        # Making sure all products are without spaces
+        df['product'] = df['product'].str.replace(' ', '_')
 
-    # Making sure all products are without spaces
-    df['product'] = df['product'].str.replace(' ', '_')
+        repofiles.del_file()
+        repofiles.save_file(df)
+        st.experimental_rerun()
 
-    repofiles.del_file()
-    repofiles.save_file(df)
-    st.experimental_rerun()
+with cols[1]:
+    # Who can order?
+    persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
+    # New Order
+    st.sidebar.title('NEW ORDER')
+    product = st.text_input('What would you like to order?')
+    amount = st.selectbox('Amount', range(1, 10))
+    person = st.selectbox('New order by:', persons)
+    submit_order = st.button('Submit order')
 
-# CHANGING EXISTING ORDER
-st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b></span>'
-         , unsafe_allow_html=True)
+    if ' ' in product:
+        product = product.replace(' ', '_')
 
-item = st.selectbox('Which order would you like to change?', df.index)
-choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index=1)
+    if submit_order:
+        shopping = [product, amount, person]
+        # shopping = {'product': product, 'amount': amount, 'person': person}
+        df.loc[len(df.index)] = shopping
 
+        # Making sure all products are without spaces
+        df['product'] = df['product'].str.replace(' ', '_')
 
-if choice == 'Delete':
-    df = df.drop(item)
-elif choice == 'Amount':
-    new_amount = st.selectbox('new amount', range(1, 10))
-    df.at[item, 'amount'] = new_amount
-else:
-    pass
+        repofiles.del_file()
+        repofiles.save_file(df)
+        st.experimental_rerun()
 
-
-
-submit = st.button('Submit changes')
-if submit:
-    # Making sure all products are without spaces
-    df['product'] = df['product'].str.replace(' ', '_')
-
-    repofiles.del_file()
-    repofiles.save_file(df)
-    st.experimental_rerun()
 
 
 
