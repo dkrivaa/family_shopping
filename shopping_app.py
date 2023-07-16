@@ -35,9 +35,9 @@ if submit_order:
     shopping = [product, amount, person]
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
-    table = st.table(df)
-    test = df.to_csv()
-    st.write(test)
+
+    # Making sure all products are without spaces
+    df['product'] = df['product'].str.replace(' ', '_')
 
     repofiles.del_file()
     repofiles.save_file(df)
