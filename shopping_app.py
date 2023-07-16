@@ -47,7 +47,6 @@ with cols[1]:
     # Who can order?
     persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
     # New Order
-    st.sidebar.title('NEW ORDER')
     product = st.text_input('What would you like to order?')
     amount = st.selectbox('Amount', range(1, 10))
     person = st.selectbox('New order by:', persons)
