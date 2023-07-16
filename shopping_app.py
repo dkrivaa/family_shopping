@@ -26,6 +26,9 @@ amount = st.sidebar.selectbox('Amount', range(1, 10))
 person = st.sidebar.selectbox('New order by:', persons)
 submit_order = st.sidebar.button('SUBMIT')
 
+if ' ' in product:
+    product = product.replace(' ', '_')
+
 
 if submit_order:
     st.write(product)
