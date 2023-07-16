@@ -28,7 +28,9 @@ person = [st.sidebar.selectbox('New order by:', persons)]
 submit_order = st.sidebar.button('SUBMIT')
 
 if submit_order:
-    order.new_order(product, amount, person)
+    shopping = {'product': product, 'amount': amount, 'person': person}
+    df = df.append(shopping)
+    st.table(df)
 
 
 
