@@ -28,6 +28,7 @@ submit_order = st.sidebar.button('SUBMIT')
 
 
 if submit_order:
+    st.write(product)
     shopping = [product, amount, person]
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
