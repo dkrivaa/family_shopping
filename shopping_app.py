@@ -43,7 +43,7 @@ if submit_order:
 # CHANGING EXISTING ORDER
 st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b></span>'
          , unsafe_allow_html=True)
-choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index='')
+choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index='None')
 
 
 if choice == 'Delete':
