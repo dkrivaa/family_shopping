@@ -75,6 +75,7 @@ if submit_order:
     repofiles.del_file()
     repofiles.save_file(df)
     st.experimental_rerun()
+    st.success('Your order was added to the list')
 
 
 
