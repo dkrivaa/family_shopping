@@ -17,11 +17,6 @@ df = repofiles.read_file()
 table = st.table(df)
 
 
-
-
-
-
-
 # SIDEBAR (NEW ORDER)
 # Who can order?
 persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
@@ -34,7 +29,6 @@ submit_order = st.sidebar.button('SUBMIT')
 
 if ' ' in product:
     product = product.replace(' ', '_')
-
 
 if submit_order:
     shopping = [product, amount, person]
@@ -50,5 +44,6 @@ if submit_order:
 
 if change_order:
     item = st.selectbox('Which order would you like to change?', df.index)
+    choice = st.radio('What would you like to change?', ['Delete', 'Change Amount'])
 
 
