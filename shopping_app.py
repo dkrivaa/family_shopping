@@ -12,6 +12,8 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
 st.markdown('___')
 
 df = repofiles.read_file()
+st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Existing list</b></span>'
+            , unsafe_allow_html=True)
 table = st.table(df)
 
 
