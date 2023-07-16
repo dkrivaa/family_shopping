@@ -20,6 +20,9 @@ amount = [st.sidebar.selectbox('Amount', range(1, 10))]
 person = [st.sidebar.selectbox('New order by:', persons)]
 submit_order = st.sidebar.button('SUBMIT')
 
+if submit_order:
+    order.new_order(product, amount, person)
+
 
 # Reading and showing present shopping list
 df = repofiles.read_file()
