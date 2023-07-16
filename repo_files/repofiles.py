@@ -47,8 +47,7 @@ def read_file():  # filename with ''
     if response.status_code == 200:
         content = response.json()['content']
         # Decode the content from base64
-        # data = base64.b64decode(content).decode('utf-8')
-        data = content
+        data = base64.b64decode(content).decode('utf-8')
         st.write(data)
         data_list = data.split()
         data_list = data_list[1:]
