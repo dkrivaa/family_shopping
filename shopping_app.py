@@ -12,10 +12,14 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
 st.markdown('___')
 
 df = repofiles.read_file()
-df = df.rename_axis(index='Order ID')
-st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Existing list</b></span>'
-            , unsafe_allow_html=True)
-table = st.dataframe(df)
+if len(df) > 0:
+    df = df.rename_axis(index='Order ID')
+    st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Existing list</b></span>'
+                , unsafe_allow_html=True)
+    table = st.dataframe(df)
+else:
+    pass
+
 st.markdown('___')
 
 # CHANGING EXISTING ORDER
