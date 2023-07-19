@@ -29,13 +29,17 @@ st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b>
 item = st.selectbox('Which order would you like to change (order ID)?', df.index)
 choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index=1)
 
-if choice == 'Delete':
-    df = df.drop(item)
-elif choice == 'Amount':
-    new_amount = st.slider('new amount', 1, 10, 1)
-    df.at[item, 'amount'] = new_amount
-else:
+try:
+    if choice == 'Delete':
+        df = df.drop(item)
+    elif choice == 'Amount':
+        new_amount = st.slider('new amount', 1, 10, 1)
+        df.at[item, 'amount'] = new_amount
+    else:
+        pass
+except:
     pass
+
 
 submit = st.button('Submit changes', type='primary')
 if submit:
