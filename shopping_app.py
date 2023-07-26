@@ -76,6 +76,7 @@ if submit_order:
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
 
+
     # Making sure all products are without spaces
     df['product'] = df['product'].str.replace(' ', '_')
 
