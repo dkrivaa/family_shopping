@@ -18,7 +18,9 @@ if len(df) > 0:
                 , unsafe_allow_html=True)
     table = st.dataframe(df)
 else:
-    pass
+    st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Existing list</b></span>'
+                , unsafe_allow_html=True)
+    table = st.dataframe(df)
 
 st.markdown('___')
 
