@@ -19,14 +19,14 @@ try:
                     , unsafe_allow_html=True)
         table = st.data_editor(df,
                                column_config={
-                                   'picture': st.column_config.LinkColumn('Link to picture')
+                                   'picture': st.column_config.LinkColumn('Picture')
                                })
     else:
         st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Existing list</b></span>'
                     , unsafe_allow_html=True)
         table = st.data_editor(df,
                                column_config={
-                                   'picture': st.column_config.LinkColumn('Link to picture')
+                                   'picture': st.column_config.LinkColumn('Picture')
                                })
 except:
     pass
@@ -38,7 +38,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b>
             , unsafe_allow_html=True)
 
 item = st.selectbox('Which order would you like to change (order ID)?', df.index)
-choice = st.radio('What would you like to change?', ['Delete', 'Amount'], index=1)
+choice = st.radio('What would you like to change?', ['Delete', 'Amount', 'Picture'], index=1)
 
 try:
     if choice == 'Delete':
@@ -46,6 +46,9 @@ try:
     elif choice == 'Amount':
         new_amount = st.slider('new amount', 1, 10, 1)
         df.at[item, 'amount'] = new_amount
+    elif choice == 'Picture':
+        new_picture = st.text_input('Here you can add url to picture')
+        df.at[item, 'Picture'] = new_picture
     else:
         pass
 except:
@@ -80,7 +83,6 @@ if ' ' in product:
 
 if submit_order:
     shopping = [product, amount, person, picture]
-    # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
 
 
