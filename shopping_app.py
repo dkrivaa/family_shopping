@@ -47,7 +47,7 @@ try:
         new_amount = st.slider('new amount', 1, 10, 1)
         df.at[item, 'amount'] = new_amount
     elif choice == 'Picture':
-        new_picture = st.text_input('Here you can add url to picture')
+        new_picture = st.text_input('Here you can add/change url to picture')
         df.at[item, 'Picture'] = new_picture
     else:
         pass
