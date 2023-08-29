@@ -64,8 +64,8 @@ if submit:
     repofiles.save_file(df)
     st.experimental_rerun()
 
-
 st.markdown('___')
+
 # NEW ORDER
 st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>New Order?</b></span>'
             , unsafe_allow_html=True)
