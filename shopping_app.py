@@ -72,13 +72,14 @@ persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
 product = st.text_input('What would you like to order?')
 amount = st.slider('Amount', 1, 10, 1)
 person = st.selectbox('New order by:', persons)
+picture = st.text_input('Here you can add url to picture')
 submit_order = st.button('Submit order', type='primary')
 
 if ' ' in product:
     product = product.replace(' ', '_')
 
 if submit_order:
-    shopping = [product, amount, person]
+    shopping = [product, amount, person, picture]
     # shopping = {'product': product, 'amount': amount, 'person': person}
     df.loc[len(df.index)] = shopping
 
