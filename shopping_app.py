@@ -91,7 +91,6 @@ if submit_order:
 
     repofiles.del_file()
     repofiles.save_file(df)
-    product = ''
     st.experimental_rerun()
 
 
