@@ -91,7 +91,6 @@ if submit_order:
 
     repofiles.del_file()
     repofiles.save_file(df)
-    st.session_state.product_box = ''
     st.experimental_rerun()
 
 
