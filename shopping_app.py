@@ -17,7 +17,10 @@ try:
         df = df.rename_axis(index='Order ID')
         st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Existing list</b></span>'
                     , unsafe_allow_html=True)
-        table = st.dataframe(df)
+        table = st.data_editor(df,
+                               column_config={
+                                   'picture': st.column_config.LinkColumn('Link to picture')
+                               })
     else:
         st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Existing list</b></span>'
                     , unsafe_allow_html=True)
