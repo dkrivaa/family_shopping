@@ -53,7 +53,7 @@ def read_file():  # filename with ''
         product = []
         amount = []
         person = []
-        # picture = []
+        picture = []
         for items in data_list:
             items = items.split(',')
             if '_' in items[0]:
@@ -61,7 +61,7 @@ def read_file():  # filename with ''
             product.append(items[0])
             amount.append(items[1])
             person.append(items[2])
-            # picture.append(items[3])
+            picture.append(items[3])
         df = pd.DataFrame({'product': product, 'amount': amount, 'person': person, 'picture': picture})
         return df
 
