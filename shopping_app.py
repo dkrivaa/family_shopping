@@ -72,7 +72,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>New Order?</b></s
 # Who can order?
 persons = ['Dad', 'Karen', 'Alex', 'Leanne', 'Yoel']
 # New Order
-product = st.text_input('What would you like to order?')
+product = st.text_input('What would you like to order?', key='product_box')
 amount = st.slider('Amount', 1, 10, 1)
 person = st.selectbox('New order by:', persons)
 picture = st.text_input('Here you can add url to picture')
@@ -91,6 +91,7 @@ if submit_order:
 
     repofiles.del_file()
     repofiles.save_file(df)
+    st.session_state.product_box = ''
     st.experimental_rerun()
 
 
