@@ -53,7 +53,7 @@ def read_file():  # filename with ''
         product = []
         amount = []
         person = []
-        picture = []
+        # picture = []
         for items in data_list:
             items = items.split(',')
             if '_' in items[0]:
