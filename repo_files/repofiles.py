@@ -45,6 +45,7 @@ def read_file():  # filename with ''
     }
     response = requests.get(api_url, headers=headers)
     if response.status_code == 200:
+        st.write(response.status_code)
         content = response.json()['content']
         # Decode the content from base64
         data = base64.b64decode(content).decode('utf-8')
