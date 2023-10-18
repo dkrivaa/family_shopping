@@ -12,6 +12,7 @@ st.markdown(f'<span style="color: #18448c; font-size: 32px"><b>Shopping list</b>
 st.markdown('___')
 
 df = repofiles.read_file()
+st.write(df)
 try:
     if len(df) > 0:
         df = df.rename_axis(index='Order ID')
