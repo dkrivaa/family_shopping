@@ -32,7 +32,6 @@ except:
     pass
 
 st.markdown('___')
-st.write(df)
 
 # CHANGING EXISTING ORDER
 st.markdown(f'<span style="color: #18448c; font-size: 18px"><b>Change Order?</b></span>'
