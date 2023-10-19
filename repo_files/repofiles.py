@@ -44,7 +44,6 @@ def read_file():  # filename with ''
         "Accept": "application/vnd.github.v3+json"
     }
     response = requests.get(api_url, headers=headers)
-    st.write(response.status_code)
 
     if response.status_code == 200:
         content = response.json()['content']
